@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CURD</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <section>
+            <div class="container py-5">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="ProductName" placeholder="Product Name">
+                    <label for="ProductName">Product Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="ProductPrice" placeholder="Product Price">
+                    <label for="ProductPrice">Product Price</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="ProductCategory" placeholder="Product Category">
+                    <label for="ProductCategory">Product Category</label>
+                    <datalist id="ProductCategory">
+                        <option value="TV">
+                        <option value="Mobile">
+                        <option value="Screens">
+                        <option value="Electornics">
+                    </datalist>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="file" class="form-control" id="ProductImage" placeholder="Product Image">
+                    <label for="ProductImage">ProductImage</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" id="ProductDes" placeholder="ProductDes"></textarea>
+                    <label for="ProductDes">Product Description</label>
+                </div>
+                <button class="btn btn-outline-info" onclick="AddProducts()">Add Product</button>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row data">
+                    
+                </div>
+            </div>
+        </section>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
