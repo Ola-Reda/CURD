@@ -6,6 +6,10 @@ var productDescription = document.querySelector("#ProductDes")
 
 
 var productsList = [];
+if(localStorage.getItem("products") !== null) {
+    productsList = JSON.parse(localStorage.getItem("products"))
+    displyProducts()
+}
 
 function AddProducts() {
     var products = {
@@ -16,13 +20,14 @@ function AddProducts() {
         image: ""
     }
     productsList.push(products)
+    localStorage.setItem("products", JSON.stringify(productsList))
     displyProducts();
     clearInputsvalue()
-    console.log(productsList)
 }
 
-var dataBox = document.querySelector(".data")
 function displyProducts() {
+    var dataBox = document.querySelector(".data")
+
     var box = "";
     for(var i =0; i < productsList.length; i++){
         box += 
@@ -31,16 +36,24 @@ function displyProducts() {
                 <div class="card" style="width: 18rem;">
                     <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h3 class="card-title">${productsList.name}</h3>
-                        <h5>${productsList.category}</h5>
-                        <p><strong>price:</strong>${productsList.price}</p>
-                        <p class="card-text">${productsList.describtion}</p>
+                        <h3 class="card-title">${productsList[i].name}</h3>
+                        <h5>${productsList[i].category}</h5>
+                        <p><strong>price:</strong>${productsList[i].price}</p>
+                        <p class="card-text">${productsList[i].describtion}</p>
+                        <button onclick="deleteProducts(${i})">delete</button>
+                        <button>update</button>
                     </div>
                 </div>
             </div>
         `
         dataBox.innerHTML = box
     }
+}
+
+function deleteProducts(index) {
+    productsList.splice(index,1)
+    localStorage.setItem("products", JSON.stringify(productsList))
+    displyProducts()
 }
 
 
