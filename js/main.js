@@ -19,7 +19,7 @@ function AddProducts() {
         price: productPrice.value,
         describtion: productDescription.value,
         category: productCategory.value,
-        image: "samsung.jpg"
+        image: `imgs/${productImage.value.slice(12)}`
     }
     productsList.push(products)
     localStorage.setItem("products", JSON.stringify(productsList))
@@ -67,10 +67,21 @@ function updateProductValue(index) {
 
 
 function updateProducts() {
-    productsList[termIndex].name = productName.value
-    productsList[termIndex].price = productPrice.value 
-    productsList[termIndex].describtion = productDescription.value 
-    productsList[termIndex].category = productCategory.value 
+    // productsList[termIndex].name = productName.value
+    // productsList[termIndex].price = productPrice.value 
+    // productsList[termIndex].describtion = productDescription.value 
+    // productsList[termIndex].category = productCategory.value 
+    // productsList[termIndex].image = productImage.value.slice(12)
+
+    var updatedroduct = {
+        name: productName.value,
+        price: productPrice.value,
+        describtion: productDescription.value,
+        category: productCategory.value,
+        image: `imgs/${productImage.value.slice(12)}`
+    }
+    productsList.splice(termIndex,1,updatedroduct)
+
     localStorage.setItem("products", JSON.stringify(productsList))
     displyProducts()
 
