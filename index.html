@@ -20,9 +20,9 @@
                     <label for="ProductPrice">Product Price</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="ProductCategory" placeholder="Product Category">
+                    <input list="Category" type="text" class="form-control" id="ProductCategory" placeholder="Product Category">
                     <label for="ProductCategory">Product Category</label>
-                    <datalist id="ProductCategory">
+                    <datalist id="Category">
                         <option value="TV">
                         <option value="Mobile">
                         <option value="Screens">
@@ -37,11 +37,13 @@
                     <textarea class="form-control" id="ProductDes" placeholder="ProductDes"></textarea>
                     <label for="ProductDes">Product Description</label>
                 </div>
-                <button class="btn btn-outline-info" onclick="AddProducts()">Add Product</button>
+                <button class="btn btn-outline-info" id="AddBtn" onclick="AddProducts()">Add Product</button>
+                <button class="btn btn-outline-warning d-none" id="EditBtn" onclick="updateProducts()">Update Product</button>
             </div>
         </section>
         <section>
             <div class="container">
+                <input oninput="searchProducts()" type="search" name="SearchInput" id="SearchInput" class="form-control mb-4">
                 <div class="row data">
                     
                 </div>
