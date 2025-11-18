@@ -12,15 +12,16 @@
         <section>
             <div class="container py-5">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="ProductName" placeholder="Product Name">
+                    <input type="text" oninput="nameValidation()" class="form-control" id="ProductName" placeholder="Product Name">
                     <label for="ProductName">Product Name</label>
+                    <p class="paratest d-none alert alert-danger mt-2">name is in-vaild must be vaild</p>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="number" class="form-control" id="ProductPrice" placeholder="Product Price">
+                    <input type="number" oninput="priceValidation()" class="form-control" id="ProductPrice" placeholder="Product Price">
                     <label for="ProductPrice">Product Price</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input list="Category" type="text" class="form-control" id="ProductCategory" placeholder="Product Category">
+                    <input list="Category" oninput="categoryValidation()" type="text" class="form-control" id="ProductCategory" placeholder="Product Category">
                     <label for="ProductCategory">Product Category</label>
                     <datalist id="Category">
                         <option value="TV">
@@ -30,11 +31,11 @@
                     </datalist>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="file" class="form-control" id="ProductImage" placeholder="Product Image">
+                    <input type="file" oninput="imageValidation()" class="form-control" id="ProductImage" placeholder="Product Image">
                     <label for="ProductImage">ProductImage</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <textarea class="form-control" id="ProductDes" placeholder="ProductDes"></textarea>
+                    <textarea class="form-control" oninput="descValidation()" id="ProductDes" placeholder="ProductDes"></textarea>
                     <label for="ProductDes">Product Description</label>
                 </div>
                 <button class="btn btn-outline-info" id="AddBtn" onclick="AddProducts()">Add Product</button>
